@@ -112,12 +112,13 @@ def wait_for_run_completion(client, thread_id, run_id, sleep_interval=5):
         time.sleep(sleep_interval)
 
 
-# loop for continuous conversation, type 'quit' to exit
-while True:
-    message = input("\nEnter your message (or type 'quit' to exit): ")
-    trimmed_message = message.lower().strip()
-    if trimmed_message == "quit":
-        break
+if __name__ == "__main__":
+    # loop for continuous conversation, type 'quit' to exit
+    while True:
+        message = input("\nEnter your message (or type 'quit' to exit): ")
+        trimmed_message = message.lower().strip()
+        if trimmed_message == "quit":
+            break
 
-    response = send_message_and_get_response(message)
-    print(f"\nAssistant Response: {response}")
+        response = send_message_and_get_response(message)
+        print(f"\nAssistant Response: {response}")
